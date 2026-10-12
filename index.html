@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Habit Buddy</title>
+<link rel="icon" type="image/png" href="media/favicon.png">
+<link rel="stylesheet" href="https://isafuianish-dev.github.io/webapp_cdnBuddy/css/tokens.css">
+<link rel="stylesheet" href="https://isafuianish-dev.github.io/webapp_cdnBuddy/css/base.css">
+<link rel="stylesheet" href="style.css">
+<script src="https://isafuianish-dev.github.io/webapp_cdnBuddy/js/theme-init.js" data-app="webapp_habbitBuddy"></script>
+</head>
+<body>
+<div class="app">
+  <header class="topbar">
+    <div class="topbar-brand">
+      <span class="brand-icon" aria-hidden="true"><span class="icon" style="-webkit-mask-image:url(media/icon.svg);mask-image:url(media/icon.svg);"></span></span>
+      <h1>Habit Buddy</h1>
+    </div>
+    <div class="topbar-actions">
+      <button id="btnSettings" class="btn btn-ghost btn-icon" title="Settings" aria-label="Settings"></button>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="panel panel-habits">
+      <div class="panel-header">
+        <input type="search" id="habitSearch" class="search-input" placeholder="Search" aria-label="Search habits">
+        <div class="panel-header-actions">
+          <button type="button" id="btnAddHabit" class="btn btn-primary">
+            Add Habit
+          </button>
+          <button id="btnExportAll" class="btn btn-ghost btn-icon" title="Export all habits as JSON" aria-label="Export habits"></button>
+          <label class="btn btn-ghost btn-icon file-btn" title="Import habits from JSON" aria-label="Import habits">
+            <span class="file-btn-icon" id="fileBtnIcon"></span>
+            <input type="file" id="fileImportData" accept="application/json">
+          </label>
+        </div>
+      </div>
+      <ul id="habitList" class="habit-list"></ul>
+      <p id="habitListEmpty" class="empty-hint" hidden></p>
+    </aside>
+
+    <main class="panel-main">
+      <div class="empty-state" id="emptyState"></div>
+
+      <div class="habit-detail" id="habitDetail" hidden>
+        <div class="habit-detail-header">
+          <span class="habit-detail-icon" id="habitDetailIcon"></span>
+          <div class="habit-detail-title-wrap">
+            <h2 class="habit-detail-title" id="habitDetailTitle"></h2>
+            <span class="habit-detail-since" id="habitDetailSince"></span>
+          </div>
+          <div class="habit-detail-actions">
+            <button type="button" id="btnEditHabit" class="btn btn-ghost btn-icon" title="Edit habit" aria-label="Edit habit"></button>
+            <button type="button" id="btnDeleteHabit" class="btn btn-ghost btn-icon" title="Delete habit" aria-label="Delete habit"></button>
+          </div>
+        </div>
+
+        <div class="panel-detail" id="habitScrollArea">
+          <button type="button" id="btnToggleToday" class="today-toggle-btn">
+            <span id="btnToggleTodayIcon"></span>
+            <span id="btnToggleTodayLabel">Mark today done</span>
+          </button>
+
+          <div class="habit-stats" id="habitStats"></div>
+
+          <section class="heatmap-section">
+            <div class="heatmap-section-header">
+              <div class="heatmap-section-title">
+                <h3>Activity</h3>
+                <span class="heatmap-year" id="heatmapYear"></span>
+              </div>
+              <span class="heatmap-legend">
+                <span>Less</span>
+                <span class="legend-swatch legend-swatch-0"></span>
+                <span class="legend-swatch legend-swatch-1"></span>
+                <span>More</span>
+              </span>
+            </div>
+            <div class="heatmap-calendar" id="heatmapCalendar"></div>
+          </section>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+
+<div class="confetti-layer" id="confettiLayer" aria-hidden="true"></div>
+
+<script src="https://isafuianish-dev.github.io/webapp_cdnBuddy/js/utils.js"></script>
+<script src="https://isafuianish-dev.github.io/webapp_cdnBuddy/js/icons.js"></script>
+<script src="https://isafuianish-dev.github.io/webapp_cdnBuddy/js/modal.js"></script>
+<script src="https://isafuianish-dev.github.io/webapp_cdnBuddy/js/theme.js"></script>
+<script src="https://isafuianish-dev.github.io/webapp_cdnBuddy/js/settings.js"></script>
+<script src="https://isafuianish-dev.github.io/webapp_cdnBuddy/js/markdown.js"></script>
+<script src="https://isafuianish-dev.github.io/webapp_cdnBuddy/js/manual.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
